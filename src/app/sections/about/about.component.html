@@ -1,0 +1,75 @@
+<div class="section">
+  <h3>About this Project</h3>
+  <p>
+    In this project I wanted to explore the
+    <a href="https://github.com/PrismarineJS/mineflayer"> mineflayer-api</a>
+    which allows an easy creations of minecraft bots.<br />
+    The project started rather tiedieus because the way youre supposed to
+    program the minecraft bot is by creating a state-machine, aka a
+    deterministic finite automaton.<br />
+    As you can immagine, creating a statemachine by hand is a very long and and
+    nerve wracking process, even for smaller programms. <br />For example this
+    is just a small section of a handwritten cobblestone-mine program:
+  </p>
+
+  <textarea highlight-js [options]="{}" [lang]="'typescript'">
+    // Small part of cobblestone-mine program
+
+    initStates(){
+        const compassPort: CompassPort = new CompassPort(bot, "compassPort", 12);
+        const goToHome: GoToHome = new GoToHome(bot, "goToHome", "home");
+        const idleState: BehaviorIdle = new BehaviorIdle();
+        const gotoCobble1: GotoXZ = new GotoXZ(
+            bot,
+            new Vec3(216, 64, 179),
+            "goto cobble 1"
+        );
+        const mineCobble1: MineBlocks = new MineBlocks(
+            bot,
+            new Vec3(215, 65, 179),
+            new Vec3(216, 65, 180),
+            "mine cobble 1",
+            5,
+            15
+        );
+        const gotoCobble2: GotoXZ = new GotoXZ(
+            bot,
+            new Vec3(214, 64, 181),
+            "goto cobble 2"
+        );
+        ...
+    }
+
+    initTransitions(){
+        ...
+        //serverstats -> compassport
+        new StateTransition({
+            parent: printServerStates,
+            child: compassPort,
+            shouldTransition: () => true,
+        }),
+        //compassport -> goToHome
+        new StateTransition({
+            parent: compassPort,
+            child: goToHome,
+            shouldTransition: () => compassPort.Done(),
+        }),
+        //gotoCobble1 -> mineCobble1
+        new StateTransition({
+            parent: gotoCobble1,
+            child: mineCobble1,
+            name: "Mining Cobble1",
+            shouldTransition: () => gotoCobble1.hasReached(),
+        }),
+        ...
+    }
+    </textarea
+  >
+  <p>
+    It is obvious that this way of "programming" a minecraft bot isn't very
+    efficient. Yout have have to explicitly tell the program each node and every
+    single transition between those nodes individually.<br />
+    Its a dull way of programming and the human brain isn't very good at
+    planning such kind of structures. <br />There has to be a better way.
+  </p>
+</div>
