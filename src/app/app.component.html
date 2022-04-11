@@ -1,4 +1,12 @@
 <app-title></app-title>
-<div class="blog-container">
-  <app-about></app-about>
+<div class="content">
+  <app-navigation
+    class="navigation"
+    [currentSection]="currentSection"
+  ></app-navigation>
+  <div class="blog-container" id="blog-container">
+    <app-about></app-about>
+    <app-what-is-a-state-machine></app-what-is-a-state-machine>
+    <app-an-own-programming-language></app-an-own-programming-language>
+  </div>
 </div>

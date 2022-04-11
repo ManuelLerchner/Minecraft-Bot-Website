@@ -1,0 +1,15 @@
+.videos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 20px;
+
+  @media (max-width: 1480px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 1280px) {
+    grid-template-columns: 1fr;
+  }
+
+  grid-gap: 20px;
+}

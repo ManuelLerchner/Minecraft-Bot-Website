@@ -6,10 +6,20 @@ import { TitleComponent } from './components/title/title.component';
 import { AboutComponent } from './sections/about/about.component';
 
 import { HighlightJsModule } from 'ngx-highlight-js';
+import { WhatIsAStateMachineComponent } from './sections/what-is-a-state-machine/what-is-a-state-machine.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { AnOwnProgrammingLanguageComponent } from './sections/an-own-programming-language/an-own-programming-language.component';
 
 @NgModule({
-  declarations: [AppComponent, TitleComponent, AboutComponent],
-  imports: [BrowserModule, HighlightJsModule ],
+  declarations: [
+    AppComponent,
+    TitleComponent,
+    AboutComponent,
+    WhatIsAStateMachineComponent,
+    NavigationComponent,
+    AnOwnProgrammingLanguageComponent,
+  ],
+  imports: [BrowserModule, HighlightJsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

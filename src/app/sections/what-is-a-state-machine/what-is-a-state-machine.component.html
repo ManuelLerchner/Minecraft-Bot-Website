@@ -1,0 +1,134 @@
+<div class="section">
+  <h3 id="what-is-a-state-machine">What is a State-Machine?</h3>
+  <p>
+    A state-machine is an abstract machine, that can be in exactly one state at
+    a given time. <br />
+    This statement is very important because that means the follwing state can
+    be uniquley determined using the current state and the new input.<br />
+    Such a state machine is also called a deterministic finite automaton, and
+    the fact that it uniquely defines the current state and any possible future
+    state alows us to build a minecraft-bot with it.<br />
+    By defining all the possible states and transitions between those states we
+    can 'hardcode' our program, so that that everything, that could possible
+    happen in our program has a unique state and transitions to get, and exit
+    from there.<br />
+    <br />
+    In contrast to a determinsitc finite automaton (DFA) exists the
+    nondeterminstic finite automaton (NFA) which is way more compicated. Such an
+    automaton can be in multiple states at a given time and use multiple
+    transitions at once or use ϵ-transitions to instantely transition to a new
+    state, even if there is no input.<br /><br />
+    Such automata aren't very useful for minecraft bots, because theire nature
+    of being in multiple states at a given time isn`t very applicable for a
+    minecraft bot, and would need a very complicated system to ultimate determit
+    what the bot should do.
+  </p>
+
+  <h4>Visualization of different Automata</h4>
+
+  <p>
+    In a previous project I already built an automata-visualizer which visually
+    represents DFAs and NFAs.<br />
+    The current state(s) is/are shown with a red circle and ϵ-transitions are
+    shown whith turquoise circles moving to the corrisponding state.
+  </p>
+
+  <p>
+    Here are some videos of a DFA that accepts the input (shown by landing in
+    the accepting <b>Z0-State</b>) if the given binary-input-string is a
+    multiple of 3.<br />
+    The autmata takes the input string, for example: "01011" and processes it
+    letter by letter.<br />
+    It then takes the according transition, based on the value of the current
+    character and goes into the new state.<br />
+    If no more letters are available and the current state ended up in the
+    accepting-state <b>Z0</b>, the automata accepts the input, and ensures that
+    the input number was a multiple of 3.
+  </p>
+
+  <div class="videos">
+    <div class="video">
+      <video loop autoplay muted controls>
+        <source src="/assets/videos/DFAs/DFA_mul3_1.mp4" type="video/mp4" />
+        Your browser does not support HTML video.
+      </video>
+      <p>
+        DFA: Checking if number is a multiple of 3. <br />
+        Input: 100110110100<sub>(2)</sub> = 2484<sub>(10)</sub> which is a
+        multiple of 3.
+      </p>
+    </div>
+    <div class="video">
+      <video loop autoplay muted controls>
+        <source src="/assets/videos/DFAs/DFA_mul3_2.mp4" type="video/mp4" />
+        Your browser does not support HTML video.
+      </video>
+      <p>
+        DFA: Checking if number is a multiple of 3. <br />
+        Input: 1100100<sub>(2)</sub> = 100<sub>(10)</sub> which is in the form
+        3n+1.
+      </p>
+    </div>
+    <div class="video">
+      <video loop autoplay muted controls>
+        <source src="/assets/videos/DFAs/DFA_mul3_3.mp4" type="video/mp4" />
+        Your browser does not support HTML video.
+      </video>
+      <p>
+        DFA: Checking if number is a multiple of 3. <br />
+        Input: 10010110101<sub>(2)</sub> = 1205<sub>(10)</sub> which is in the
+        form 3n+2.
+      </p>
+    </div>
+  </div>
+
+  <p>
+    The videos above were visualization of DFAs, which can only be in one state
+    at a time. <br />
+    As mentioned above, there also exist the NFAs, which are automata that can
+    be in multiple states at a time and which can use multiple transitions at
+    once. <br />
+    In the following videos you can see the behavior of some NFAs which are way
+    more complicated to fully understand because there is much more stuff
+    happening at the same time.
+  </p>
+
+  <div class="videos">
+    <div class="video">
+      <video loop autoplay muted controls>
+        <source src="/assets/videos/NFAs/NFA_example_1.mp4" type="video/mp4" />
+        Your browser does not support HTML video.
+      </video>
+      <p>
+        NFA: NFA which accepts all strings of this kind: (ab)* ∪ (aba)*.<br />
+        For example: ϵ, "ababab", "abababab".
+      </p>
+    </div>
+    <div class="video">
+      <video loop autoplay muted controls>
+        <source
+          src="/assets/videos/NFAs/NFA_epsilon-transitions_2.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support HTML video.
+      </video>
+      <p>
+        NFA: Random NFA which is using multiple epsilon transitions to process
+        the string: "abababc"
+      </p>
+    </div>
+    <div class="video">
+      <video loop autoplay muted controls>
+        <source
+          src="/assets/videos/NFAs/NFA_epsilon-transitions_3.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support HTML video.
+      </video>
+      <p>
+        NFA: Random NFA which is using multiple epsilon transitions to process
+        the string: "aabad"
+      </p>
+    </div>
+  </div>
+</div>

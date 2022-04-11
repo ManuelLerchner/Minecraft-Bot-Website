@@ -1,5 +1,5 @@
 <div class="section">
-  <h3>About this Project</h3>
+  <h3 id="about">About this Project</h3>
   <p>
     In this project I wanted to explore the
     <a href="https://github.com/PrismarineJS/mineflayer"> mineflayer-api</a>
@@ -12,7 +12,12 @@
     is just a small section of a handwritten cobblestone-mine program:
   </p>
 
-  <textarea highlight-js [options]="{}" [lang]="'typescript'">
+  <textarea
+    highlight-js
+    [options]="{}"
+    [lang]="'typescript'"
+    title="cobblestone-farmer"
+  >
     // Small part of cobblestone-mine program
 
     initStates(){
@@ -65,11 +70,29 @@
     }
     </textarea
   >
+
   <p>
     It is obvious that this way of "programming" a minecraft bot isn't very
     efficient. Yout have have to explicitly tell the program each node and every
     single transition between those nodes individually.<br />
     Its a dull way of programming and the human brain isn't very good at
-    planning such kind of structures. <br />There has to be a better way.
+    planning such kind of structures. <br /><br />
+    If you consider how big state-machines can get, you can barely imagine how
+    much code you would need to write, even for a "small" program. There has to
+    be a better way.
   </p>
+  <figure>
+    <img
+      class="fullWidthImg"
+      src="/assets/images/cobblestone-mine-example.png"
+      title="cobblestone-mine-program-example"
+    />
+    <figcaption>
+      <p>
+        This is the statemachine behind a cobblestone-mine-program with
+        automatic storage and reequipping of pickaxes. It's rather complicated
+        and would be very difficult to write from scratch.
+      </p>
+    </figcaption>
+  </figure>
 </div>

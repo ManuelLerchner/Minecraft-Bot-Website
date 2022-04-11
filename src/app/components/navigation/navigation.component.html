@@ -1,0 +1,11 @@
+<div class="navigation">
+  <ul>
+    <li *ngFor="let paragraph of paragraphs">
+      <a
+        [ngClass]="{ selected: paragraph.id === currentSection }"
+        href="#{{ paragraph.id }}"
+        >{{ paragraph.title }}</a
+      >
+    </li>
+  </ul>
+</div>

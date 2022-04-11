@@ -9,3 +9,13 @@ body {
   background-color: #fff;
   margin: 0px;
 }
+
+.hljs {
+  border-radius: 10px;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 1);
+}
+
+* {
+  scroll-behavior: smooth;
+  transition: all 0.3s ease-in-out;
+}

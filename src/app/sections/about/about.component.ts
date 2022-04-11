@@ -8,9 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class AboutComponent implements OnInit {
   constructor() {}
 
-  sampleContent = `
-  import { Component, OnInit } from '@angular/core';
-  `;
-
   ngOnInit(): void {}
 }
