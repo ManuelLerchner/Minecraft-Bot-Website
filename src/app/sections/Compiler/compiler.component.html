@@ -1,0 +1,51 @@
+<div class="section">
+  <h3 id="compiler">Compiler:</h3>
+  <p>
+    As previously mentionend, building the state-machine from scratch is not a
+    very pleasing task. so I decided to create a more abstract way of
+    programming the minecraft bot, which allows us to use high-level
+    abstractions like an <code>if</code>, <code>while</code> and
+    <code>try</code> statement.
+    <br />
+    I had the idea, that insteady of writing the states and transitions by hand,
+    it would be much more interseting if a "compiler" could handle that boring
+    job. You just have to give it a high-level abstraction of the things your
+    minecraft bot should do and the compiler assembles the underlying
+    state-machine for you.
+  </p>
+
+  <p>
+    Instead of creating the states manually and writing every single transition
+    you could write something that describes the task in a more high-level way:
+    For example to write a small cobblestone-mine program, you could write
+    something like:
+  </p>
+
+  <textarea highlight-js [options]="{}" title="cobblestone-farmer-simple">
+  while(bot has less than 10 cobblestone){
+    equip bot with pickaxe;
+    goto cobblestone generator;
+    mine cobblesonte;
+  }
+  </textarea>
+  <p>
+    A compiler would take that and compile it into a state-machine, that the bot
+    can execute.<br />
+    The state machine from the sample program above would look like this:
+  </p>
+  <figure>
+    <app-smart-image
+      class="fullWidthImg"
+      [src]="'/assets/images/cobblestone-miner-small.png'"
+      [title]="'Cobblestone-Mine-Program-Small'"
+    >
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is the state-machine that the compiler creates from the given
+        program. The main program flow loops around in the while loop, until the
+        exit condition is met.
+      </p>
+    </figcaption>
+  </figure>
+</div>

@@ -8,7 +8,9 @@ import { AboutComponent } from './sections/about/about.component';
 import { HighlightJsModule } from 'ngx-highlight-js';
 import { WhatIsAStateMachineComponent } from './sections/what-is-a-state-machine/what-is-a-state-machine.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { AnOwnProgrammingLanguageComponent } from './sections/an-own-programming-language/an-own-programming-language.component';
+import { Compiler } from './sections/Compiler/compiler.component';
+import { CodeStructureComponent } from './sections/code-structure/code-structure.component';
+import { SmartImageComponent } from './components/smart-image/smart-image.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AnOwnProgrammingLanguageComponent } from './sections/an-own-programming
     AboutComponent,
     WhatIsAStateMachineComponent,
     NavigationComponent,
-    AnOwnProgrammingLanguageComponent,
+    Compiler,
+    CodeStructureComponent,
+    SmartImageComponent,
   ],
   imports: [BrowserModule, HighlightJsModule],
   providers: [],

@@ -18,8 +18,12 @@ export class NavigationComponent implements OnInit {
       title: 'What is a State-Machine?',
     },
     {
-      id: 'own-programming-language',
-      title: 'Own Programming Language',
+      id: 'compiler',
+      title: 'Compiler',
+    },
+    {
+      id: 'code-structure',
+      title: 'Code Structure',
     },
   ];
   constructor() {}

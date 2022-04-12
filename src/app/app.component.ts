@@ -30,6 +30,6 @@ export class AppComponent {
   ngAfterViewInit() {
     this.createAndObserve(document.querySelector('#about')!);
     this.createAndObserve(document.querySelector('#what-is-a-state-machine')!);
-    this.createAndObserve(document.querySelector('#own-programming-language')!);
+    this.createAndObserve(document.querySelector('#compiler')!);
   }
 }

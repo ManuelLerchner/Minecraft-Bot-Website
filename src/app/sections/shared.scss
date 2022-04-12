@@ -4,7 +4,7 @@
   padding: 10px;
 
   background-color: #f7f7f7be;
-  width: 60vw;
+  width: 100%;
   border-radius: 10px;
 
   h3 {
@@ -45,10 +45,7 @@
       "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  img {
-    image-rendering: pixelated;
-    box-shadow: 1px 2px 6px rgba(0, 0, 0, 1);
-  }
+
 
   figure {
     margin: 0;

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnOwnProgrammingLanguageComponent } from './an-own-programming-language.component';
+import { Compiler } from './compiler.component';
 
 describe('AnOwnProgrammingLanguageComponent', () => {
-  let component: AnOwnProgrammingLanguageComponent;
-  let fixture: ComponentFixture<AnOwnProgrammingLanguageComponent>;
+  let component: Compiler;
+  let fixture: ComponentFixture<Compiler>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AnOwnProgrammingLanguageComponent ]
+      declarations: [ Compiler ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AnOwnProgrammingLanguageComponent);
+    fixture = TestBed.createComponent(Compiler);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

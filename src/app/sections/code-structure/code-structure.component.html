@@ -1,0 +1,87 @@
+<div class="section">
+  <h3 id="code-structure">Code Structure</h3>
+  <p>
+    Now with the project goal in mind we can start to create the structure of
+    our project:<br />
+    I decided to represent the program of the bot in a hirarchical way using
+    nodes to represent each single subtask of the main programm.<br />
+    The goal is to create a robust structure that easily allows future
+    improvements and extensions, which lead me to this Code Structure:
+  </p>
+  <figure>
+    <app-smart-image
+      class="fullWidthImg"
+      [src]="'/assets/images/uml-diagram.svg'"
+      [title]="'UML-Diagram'"
+      [style]="{ backgroundColor: 'rgb(95, 95, 95)' }"
+    >
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is the UML-diagram behind the compiler. It shows the structure and
+        inheritance hierarchy of the individual nodes.
+      </p>
+    </figcaption>
+  </figure>
+
+  <p>
+    As you can see in the UML-Diagramm above, every single node implements the
+    <code>Node</code>-Interface which enforces a
+    <code>prettyPrint()</code> function on all its children. This is to ensure,
+    that we have an easy way of analyzing the code-structure and we can check if
+    the program we wrote actually makes sense and got parsed correctly.<br />
+    <br />
+    Then we have the second interface, the so called <code>ASTNode</code> which
+    stands for Abstract-Syntax-Tree-Node which will play a huge role in
+    representing the AST of the program later on. The AST gives us a possibility
+    to represent the hierarchical nature of the program in an organised
+    tree-form, which then can be easily processed by the compiler and get
+    compiled into a state-machine the bot can understand.<br />
+    <br />
+    The <code>ASTNode</code> additionally forces a
+    <code>compile()</code> function on all its children, which will allow us to
+    compile the whole AST with a single <code>compile()</code> call to the
+    root-node in the future.<br /><br />
+    The <code>compile()</code> function itselfs recursively calls the compile
+    functions of the children-nodes and processes them accordingly, then it
+    returns an object containing all the evaluated states and transitions of the
+    state-machine, and keeps track of the entry and the exit states of the
+    currently compiled node.<br />
+    By doing it this way, the different nodes can be easily chained together,
+    just by connecting the exit-state of one node to the entry-state of the new
+    node with a newly created transition.<br />
+    <br />
+    Additionaly the returned object also contains information about all the
+    states of the underlying program which could possible fail and throw an
+    error at some point.<br />
+    The compiler takes this information and informs the programmer about these
+    possible errors of the current programm and thus allows the programmer to
+    easily find a way of preventing / catch those errors, bevore they cause any
+    real dammage.<br />
+    <br />
+    In the follwing image you can see what the AST of the example-program we
+    have written above, would look like:
+  </p>
+  <figure>
+    <app-smart-image
+      class="fullWidthImg"
+      [src]="'/assets/images/ast.svg'"
+      [title]="'AST'"
+      [style]="{ backgroundColor: 'rgb(95, 95, 95)' }"
+    >
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is the AST of the program we have written above. It follows the
+        code structure we have defined in the UML-Diagram above. And contains
+        all the information the compiler needs to compile the program into a
+        state-machine.
+      </p>
+    </figcaption>
+  </figure>
+  <p>
+    In the following sections I further explain the logic behind the AST-nodes
+    and I will explain how the compiler ultimately takes those nodes and turns
+    them into executable instructions for the minecraft bot.
+  </p>
+</div>

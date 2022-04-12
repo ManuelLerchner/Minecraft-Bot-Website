@@ -9,6 +9,10 @@ body {
   background-color: #fff;
   margin: 0px;
 }
+.element-full-screen {
+  overflow: hidden;
+  height: 100vh;
+}
 
 .hljs {
   border-radius: 10px;
