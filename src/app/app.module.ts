@@ -11,6 +11,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { Compiler } from './sections/Compiler/compiler.component';
 import { CodeStructureComponent } from './sections/code-structure/code-structure.component';
 import { SmartImageComponent } from './components/smart-image/smart-image.component';
+import { TaskNodeComponent } from './sections/task-node/task-node.component';
+import { ActionComponent } from './sections/action/action.component';
+import { SequentialNodeComponent } from './sections/sequential-node/sequential-node.component';
+import { WhileNodeComponent } from './sections/while-node/while-node.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import { SmartImageComponent } from './components/smart-image/smart-image.compon
     Compiler,
     CodeStructureComponent,
     SmartImageComponent,
+    TaskNodeComponent,
+    ActionComponent,
+    SequentialNodeComponent,
+    WhileNodeComponent,
   ],
   imports: [BrowserModule, HighlightJsModule],
   providers: [],

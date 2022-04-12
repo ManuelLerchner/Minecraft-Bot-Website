@@ -1,0 +1,32 @@
+<div class="section">
+  <h3 id="task-node">Task Node</h3>
+  <p>
+    The Task Node is the most simple node. Its modeled as an abstract class as
+    you can see in the UML-Diagram. Its direct children then implement the
+    actual logic.<br />
+    When you compile it, it just returns the action asociated with it, and
+    wheter that action can possible fail, thats it. At this level there are no
+    transitions yet because were dealing with a single actions, in other words
+    we are handeling a single states of the state-machine.<br />
+    <br />
+    An example of a <code>TaskNode</code> is for example a
+    <code>GoToNode</code> which tells the bot to go to the specified
+    coordinates. <br />
+    In the following image you can see how a <code>GoToNode</code> gets
+    compiled:
+  </p>
+  <figure class="halfWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/gotoNode.png'"
+      [title]="'GoToNode-Compiled'"
+    >
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is what a compiled GoToNode looks like. Its very simple and doesn't
+        contain any transitions yet. Its main task is to represent an action
+        which the bot can directly execute.
+      </p>
+    </figcaption>
+  </figure>
+</div>

@@ -1,0 +1,64 @@
+<div class="section">
+  <h3 id="sequential-node">Sequential Node</h3>
+  <p>
+    The next thing you may want to do with different <code>TaskNodes</code> /
+    <code>Actions</code> is to chain them together, so that the bot can execute
+    multiple tasks in a sequential order.
+    <br />
+    This is exactly what the <code>SequantialNode </code> is doing. It receives
+    an arbitrary amount of children-nodes and its task is to compile each child
+    and then connect it with its successor.<br />
+    This act of linking the children isn't limited to
+    <code>ActionNodes</code> only:<br />
+    We have previously defined the <code>compile()</code> function in a way,
+    that every compilation returns an entry- and an exit-state for the compiled
+    node. So by using the entry and exit-states, we can also use other
+    <code>SequentialNodes</code> inside the current <code>SequentialNode</code>,
+    and it isn't really constrained to just sequantial-nodes, we can use all
+    possible <code>ASTNodes</code> as children.<br />
+    Each child will then get recursivly compiled and connected with its
+    successor along the way. This allows for arbitrary nesting of different
+    nodes, and thus creating a real hirarchical-program.<br />
+    <br />
+    As mentioned above, when you compile a <code>SequentialNode</code> it
+    recursivly compiles all its children and connects them with newly created
+    transitions. <br />Additionaly it creates an entry- and an exit-state
+    (called "Sequential-Node" and "End Sequential-Node") for the node. These
+    special states have no impact on the minecraft-bot. Their whole purpose is
+    to allow us easily verify if the generated-program is correct, because those
+    states allow us to match each action to its corresponding parent-node.
+    Furthermore, they also provide a a simple way of entering and exiting a
+    node.<br />
+    <br />
+    Here are some images of different <code>SequentialNodes</code>, the first
+    one is a simple sequential-node, which just connects different
+    actions-nodes, the second shows how the nesting of different
+    sequential-nodes works.
+  </p>
+  <figure class="fullWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/sequentialNode-simple.png'"
+      [title]="'Simple Sequential Node'"
+    >
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is a simple sequential-node, which just connects different
+        actions-nodes.
+      </p>
+    </figcaption>
+  </figure>
+  <figure class="fullWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/sequentialNode-nested.png'"
+      [title]="'Nested Sequential Node'"
+    >
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is a nested sequential-node, each layer represents a new
+        nesting-level.
+      </p>
+    </figcaption>
+  </figure>
+</div>

@@ -31,5 +31,10 @@ export class AppComponent {
     this.createAndObserve(document.querySelector('#about')!);
     this.createAndObserve(document.querySelector('#what-is-a-state-machine')!);
     this.createAndObserve(document.querySelector('#compiler')!);
+    this.createAndObserve(document.querySelector('#code-structure')!);
+    this.createAndObserve(document.querySelector('#task-node')!);
+    this.createAndObserve(document.querySelector('#action')!);
+    this.createAndObserve(document.querySelector('#sequential-node')!);
+    this.createAndObserve(document.querySelector('#while-node')!);
   }
 }

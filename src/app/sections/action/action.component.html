@@ -1,0 +1,81 @@
+<div class="section">
+  <h3 id="action">What is an Action?</h3>
+  <p>
+    An Action is the foundation block of our compiler. In other words it is the
+    actual class that tells the minecraft bot what to do. As you can see from
+    the UML Diagram bellow, it extends the State behaviour interface of the
+    mineflayer-api and additionally forces the <code>onStateEntered()</code> and
+    <code>onStateExited()</code> methods on all its children.
+  </p>
+  <figure class="halfWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/uml-diagram-action.svg'"
+      [title]="'UML-Diagram for the action class'"
+      [style]="{ backgroundColor: 'rgb(95, 95, 95)' }"
+    >
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is the UML-diagram behind the action class. It shows the structure
+        and inheritance hierarchy of the individual actions.
+      </p>
+    </figcaption>
+  </figure>
+  <p>
+    When the minecraft-bot is currently transitioning into a new state, the
+    <code>onStateEntered()</code> function of the action class is called. This
+    function can be asynchronous, and it tells the bot what it should do, and
+    awaits the result of this task. <br />
+    When the task could be completed, the function tells the state-machine that
+    the current task is finished, and that the next transition can be
+    executed.<br />
+    If the action failed, the <code>errored</code>-Flag will be set.
+    <br />
+    When the bot leaves the current state, the
+    <code>onStateExited()</code> function is called, which primarily resets all
+    internal states of the corrisponding action class. <br />
+    <br />
+    This is for example the code behind the <code>GoToAction</code> class:
+  </p>
+
+  <textarea
+    highlight-js
+    [options]="{}"
+    [lang]="'typescript'"
+    title="cobblestone-farmer"
+  >
+export class GoToAction extends Action {
+    goal: goals.GoalBlock;
+
+    constructor(bot: Bot, pos: Vec3) {
+        super(bot);
+        this.goal = new goals.GoalBlock(pos.x, pos.y, pos.z);
+    }
+
+    async onStateEntered() {
+        try {
+            await this.bot.pathfinder.goto(this.goal, () => {});
+            this.setFinished();
+        } catch (err: any) {
+            this.setError(err);
+        }
+    }
+
+    canThrowError(): boolean {
+        return true;
+    }
+}
+  </textarea>
+  <p>
+    As you can see from the code, the <code>Action</code> classes are very
+    minimalistic, and don't contain much boilerplate code.<br />
+    If someone wants to extend the minecraft-bot with new features, he can just
+    add new action-classes and new nodes and implement the
+    <code>onStateEntered()</code> and <code>onStateExited()</code> functions,
+    thats it. Everything else will work out just fine.
+  </p>
+  <p>
+    Now that we know how to create an action, we can start to explore the more
+    complex nodes:
+  </p>
+</div>

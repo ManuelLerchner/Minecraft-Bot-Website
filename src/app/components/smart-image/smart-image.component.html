@@ -1,20 +1,22 @@
-<img
-  class="image"
-  src="{{ src }}"
-  title="{{ title }}"
-  [ngStyle]="style"
-  (click)="toggleFullScreen()"
-/>
-
-<div
-  *ngIf="isFullScreen"
-  class="fullScreenContainer"
-  (click)="toggleFullScreen()"
->
+<div class="imageContainer">
   <img
+    class="image"
     src="{{ src }}"
     title="{{ title }}"
     [ngStyle]="style"
-    class="fullScreen"
+    (click)="toggleFullScreen()"
   />
+
+  <div
+    *ngIf="isFullScreen"
+    class="fullScreenContainer"
+    (click)="toggleFullScreen()"
+  >
+    <img
+      src="{{ src }}"
+      title="{{ title }}"
+      [ngStyle]="style"
+      class="fullScreen"
+    />
+  </div>
 </div>
