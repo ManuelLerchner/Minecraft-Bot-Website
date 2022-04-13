@@ -10,37 +10,82 @@ export class NavigationComponent implements OnInit {
 
   paragraphs = [
     {
-      id: 'about',
-      title: 'About',
+      name: 'Introduction',
+      links: [
+        {
+          id: 'about',
+          title: 'About',
+        },
+        {
+          id: 'what-is-a-state-machine',
+          title: 'What is a State-Machine?',
+        },
+      ],
     },
     {
-      id: 'what-is-a-state-machine',
-      title: 'What is a State-Machine?',
+      name: 'Project-Scope',
+      links: [
+        {
+          id: 'compiler',
+          title: 'Compiler Idea',
+        },
+        {
+          id: 'code-structure',
+          title: 'Code Structure',
+        },
+      ],
     },
     {
-      id: 'compiler',
-      title: 'Compiler',
+      name: 'Nodes',
+      links: [
+        {
+          id: 'task-node',
+          title: 'Task Node',
+        },
+        {
+          id: 'action',
+          title: 'What is an Action?',
+        },
+        {
+          id: 'sequential-node',
+          title: 'Sequential Node',
+        },
+        {
+          id: 'while-node',
+          title: 'While Node',
+        },
+        {
+          id: 'if-node',
+          title: 'If Node',
+        },
+        {
+          id: 'try-node',
+          title: 'Try Node',
+        },
+      ],
     },
     {
-      id: 'code-structure',
-      title: 'Code Structure',
+      name: 'Example-Programs',
+      links: [
+        {
+          id: 'cobblestone-program',
+          title: 'Cobblestone Program',
+        },
+        {
+          id: 'wood-program',
+          title: 'Wood Program',
+        },
+      ],
     },
     {
-      id: 'task-node',
-      title: 'Task Node',
+      name: 'Conclusion',
+      links: [
+        {
+          id: 'conclusion',
+          title: 'Conclusion',
+        },
+      ],
     },
-    {
-      id: 'action',
-      title: 'What is an Action?',
-    },
-    {
-      id: 'sequential-node',
-      title: 'Sequential Node',
-    },
-    {
-      id: 'while-node',
-      title: 'While Node',
-    }
   ];
   constructor() {}
 

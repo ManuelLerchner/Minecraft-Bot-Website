@@ -1,0 +1,15 @@
+ol {
+  li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  li::marker {
+    color: #212529;
+    font-size: 1.2rem;
+  }
+}

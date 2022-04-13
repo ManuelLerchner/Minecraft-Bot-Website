@@ -36,5 +36,9 @@ export class AppComponent {
     this.createAndObserve(document.querySelector('#action')!);
     this.createAndObserve(document.querySelector('#sequential-node')!);
     this.createAndObserve(document.querySelector('#while-node')!);
+    this.createAndObserve(document.querySelector('#if-node')!);
+    this.createAndObserve(document.querySelector('#try-node')!);
+    this.createAndObserve(document.querySelector('#cobblestone-program')!);
+    this.createAndObserve(document.querySelector('#wood-program')!);
   }
 }

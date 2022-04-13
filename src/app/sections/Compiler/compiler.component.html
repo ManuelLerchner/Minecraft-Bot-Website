@@ -21,13 +21,20 @@
     something like:
   </p>
 
-  <textarea highlight-js [options]="{}" title="cobblestone-farmer-simple">
-  while(bot has less than 10 cobblestone){
-    equip bot with pickaxe;
-    goto cobblestone generator;
-    mine cobblesonte;
-  }
-  </textarea>
+  <figure class="halfWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/example-program-code.png'"
+      [title]="'example-program-code'"
+      [style]="{ 'image-rendering': 'auto' }"
+    >
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is the code you would write to create a small cobblestone-mine
+        program.
+      </p>
+    </figcaption>
+  </figure>
   <p>
     A compiler would take that and compile it into a state-machine, that the bot
     can execute.<br />
@@ -35,8 +42,8 @@
   </p>
   <figure class="fullWidthImg">
     <app-smart-image
-      [src]="'/assets/images/cobblestone-miner-small.png'"
-      [title]="'Cobblestone-Mine-Program-Small'"
+      [src]="'/assets/images/example-program.png'"
+      [title]="'compiled-example-program'"
     >
     </app-smart-image>
     <figcaption>

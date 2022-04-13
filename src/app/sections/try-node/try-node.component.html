@@ -1,0 +1,52 @@
+<div class="section">
+  <h3 id="try-node">Try Node:</h3>
+  <p>
+    At last we have the <code>TryNode</code>. It receives two arbitrary
+    <code>ASTNodes</code>, one for its body, and the other one for the
+    error-state.<br />
+    In a perfect world there would be no need for a <code>TryNode</code>, but as
+    previously mentioned the execution of individual tasks could also possible
+    end up in an error-state. On reason for that could be because the bot
+    couldn't get to a specified target because it floats up in the air, or
+    because the bot tried to take items from a chest which was empty. Normally
+    the bot would just be stuck now, because the actual task couldn't be
+    finished. But with the introduction of the <code>TryNode</code>, which adds
+    new error-transitions to all the actions in its body-note, which could
+    possibly fail. <br />
+    Should an action throw an error, the programm continues on with a predefined
+    error-node, instead of beeing stuck in the failed state. This allows the
+    programmer to catch possible errors, and tell the bot what it should do, if
+    the actual task couldn't be completed.<br />
+    <br />
+    Here is an example of such an <code>TryNode</code>:
+  </p>
+  <figure class="halfWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/try-node-code.png'"
+      [title]="'Try-Node-Code'"
+      [style]="{ 'image-rendering': 'auto' }"
+    >
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is the example code we are going to compile. It is a
+        <code>SequentialNode</code> with a <code>TaskNodes</code> and an
+        <code>IfNode</code> inside.
+      </p>
+    </figcaption>
+  </figure>
+
+  <figure class="fullWidthImg">
+    <app-smart-image [src]="'/assets/images/try-node.png'" [title]="'Try-Node'">
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is the compiled version of the code above. The main program is
+        clearly visible: Its just a <code>TaskNode</code> followed by an
+        <code>IFNode</code>. The only difference is, that the whole main-program
+        is surrounded by a <code>TryNode</code>, which adds the error-state, and
+        new error-transitions to the critical actions in its body-note.
+      </p>
+    </figcaption>
+  </figure>
+</div>

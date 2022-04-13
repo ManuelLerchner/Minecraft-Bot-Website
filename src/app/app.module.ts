@@ -15,6 +15,11 @@ import { TaskNodeComponent } from './sections/task-node/task-node.component';
 import { ActionComponent } from './sections/action/action.component';
 import { SequentialNodeComponent } from './sections/sequential-node/sequential-node.component';
 import { WhileNodeComponent } from './sections/while-node/while-node.component';
+import { IfNodeComponent } from './sections/if-node/if-node.component';
+import { TryNodeComponent } from './sections/try-node/try-node.component';
+import { CobblestoneProgramComponent } from './sections/cobblestone-program/cobblestone-program.component';
+import { WoodProgramComponent } from './sections/wood-program/wood-program.component';
+import { ConclusionComponent } from './sections/conclusion/conclusion.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,11 @@ import { WhileNodeComponent } from './sections/while-node/while-node.component';
     ActionComponent,
     SequentialNodeComponent,
     WhileNodeComponent,
+    IfNodeComponent,
+    TryNodeComponent,
+    CobblestoneProgramComponent,
+    WoodProgramComponent,
+    ConclusionComponent,
   ],
   imports: [BrowserModule, HighlightJsModule],
   providers: [],

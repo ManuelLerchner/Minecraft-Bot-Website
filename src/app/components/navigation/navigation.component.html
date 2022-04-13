@@ -1,5 +1,5 @@
 <div class="navigation">
-  <ul>
+  <!-- <ul>
     <li *ngFor="let paragraph of paragraphs">
       <a
         [ngClass]="{ selected: paragraph.id === currentSection }"
@@ -7,5 +7,16 @@
         >{{ paragraph.title }}</a
       >
     </li>
-  </ul>
+  </ul> -->
+  <div *ngFor="let paragraph of paragraphs">
+    <p>{{ paragraph.name + ":" }}</p>
+
+    <a
+      *ngFor="let link of paragraph.links"
+      [ngClass]="{ selected: link.id === currentSection }"
+      href="#{{ link.id }}"
+    >
+      {{ link.title }}
+    </a>
+  </div>
 </div>

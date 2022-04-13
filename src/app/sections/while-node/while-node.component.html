@@ -1,4 +1,82 @@
 <div class="section">
-  <h3 id="while-node">While Node</h3>
-  <p>sd</p>
+  <h3 id="while-node">While Node:</h3>
+  <p>
+    Next we have the <code>WhileNode</code>. It receives a
+    <code>ConditionNode</code> and a body-node, which can be every possible
+    <code>ASTNode</code>.<br />
+    Its job is to repeat the given body-node until the condition of the
+    <code>ConditionNode</code> is no longer true.<br />
+    When you compile a <code>WhileNode</code>, it compiles its body-node and
+    hooks it up with its internal states.<br />
+    Specifically it creates 3 internal transitions which serve the following
+    purpuses:
+  </p>
+
+  <ol>
+    <li>
+      <p>
+        The "enter-loop" transition connects the starting-state of the
+        <code>WhileNode</code> to the entry-state of the body. This transition
+        occurs when the condition of the <code>ConditionNode</code> evaluates to
+        true. When this transition occures the program flow is directed to the
+        body-node, where the program continous.
+      </p>
+    </li>
+    <li>
+      <p>
+        Once the body note is finished executing. The "exit-loop" transition
+        occurs. This transition allows the program flow to reenter into the head
+        of the <code>WhileNode</code> once the body is finished.<br />
+        There the loop-condition gets evaluated again, and the program flow
+        enters the body node again or exits the
+        <code>WhileNode</code> entirely, depending on the result of the
+        evaluation.
+      </p>
+    </li>
+    <li>
+      <p>
+        The last transition is the "exit-while-node" transition. It occurs when
+        the condition of the <code>ConditionNode</code> evaluates to false. That
+        means that the while-loop is finished and the program flow can continue
+        with the next node.
+      </p>
+    </li>
+  </ol>
+
+  <p>Lets look at at an example:</p>
+
+  <figure class="halfWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/while-node-code.png'"
+      [title]="'Nested-While-Node-Code'"
+      [style]="{ 'image-rendering': 'auto' }"
+    >
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is the example code we are going to compile. It is a
+        <code>SequentialNode</code> with two <code>TaskNodes</code> and a
+        <code>WhileNode</code>, which performs the actual cobblestone-mining
+        task.
+      </p>
+    </figcaption>
+  </figure>
+
+  <figure class="fullWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/while-node.png'"
+      [title]="'Nested-While-Node'"
+    >
+    </app-smart-image>
+    <figcaption>
+      <p>
+        This is the compiled version of the code above. You can clearly see the
+        different parts of the <code>WhileNode</code><br />
+        The body of the <code>WhileNode</code> is shown at the bottom, and you
+        can clearly see how it loops around to complete the looping-part of the
+        <code>WhileNode</code>. Once the condition is no longer true, the
+        program-flow exits from the body and continues on with the next node.
+      </p>
+    </figcaption>
+  </figure>
 </div>
