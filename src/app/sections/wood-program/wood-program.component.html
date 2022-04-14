@@ -1,3 +1,75 @@
 <div class="section">
   <h3 id="wood-program">Wood Program:</h3>
+  <p>
+    The second program we are going to look at is a wood-farming program. Lets
+    first look at its helper functions, because we are going to use them in the
+    main program:<br />
+    The first function is the main gear which drives the bot. As you can see
+    from the code, it evaluates the neighboring blocks at runtime, and checks
+    whether the given block is an oak_log. Then it returns all the blocks found,
+    so that the bot can dynamically decide which block to mine.
+  </p>
+
+  <figure class="halfWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/mine-wood-helper-code.png'"
+      [title]="'cobblestone-miner helper code'"
+      [style]="{ 'image-rendering': 'auto' }"
+    >
+    </app-smart-image>
+
+    <figcaption>
+      <p>
+        Here you can see the two helper functions which are used in the main
+        program. The first one dynamically finds oak_logs, so that the bot can
+        farm them. The second one is similar to the one used in the
+        cobblestone-miner, it also checks if the wooden-axe is about to break.
+      </p>
+    </figcaption>
+  </figure>
+
+  <p>
+    The following image is the result of the
+    <code>prettyPrint()</code> function. Again, the resulting code is way more
+    readable and easy to understand than the individual nodes. Additionaly we
+    can get an overview of the program by looking at it in its minimal form,
+    which is useful for debugging.
+  </p>
+  <figure class="halfWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/mine-wood-full-code.png'"
+      [title]="'cobblestone-miner full code'"
+      [style]="{ 'image-rendering': 'auto' }"
+    >
+    </app-smart-image>
+
+    <figcaption>
+      <p>
+        This is the full code of the wood-farm program if you
+        <code>prettyPrint()</code> the whole program. In this form, the program
+        is way more readable, and we can also verify that the program is got
+        evaluated correctly.
+      </p>
+    </figcaption>
+  </figure>
+
+  <p>
+    Now lets look at the code in action: Here is video of the actual bot running
+    the program in a test-world: In this world, the bot has access to a
+    wood-farm and some chests with axes and chests to deposit its items.
+  </p>
+
+  <div class="video">
+    <video autoplay muted controls oncanplay="this.muted=true">
+      <source src="/assets/videos/bot/wood.mp4" type="video/mp4" />
+      Your browser does not support HTML video.
+    </video>
+    <p>
+      Here is video of the actual bot running the program:<br />
+      As specified in the program, the bot equips itself with a wooden-axe and
+      then goes to wood-farm where it mines all the trees. Then it picks up all
+      the dropped items and puts them into different chests. At last it reequips
+      itself with new sapplings and replants all the trees.
+    </p>
+  </div>
 </div>

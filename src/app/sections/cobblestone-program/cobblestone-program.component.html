@@ -1,3 +1,111 @@
 <div class="section">
   <h3 id="cobblestone-program">Cobblestone Program:</h3>
+  <p>
+    So now all the fundamental blocks for the programming language are
+    implemented. I also imlemented some more Nodes which will help to improve
+    the usability of the programming language, but those are not that
+    interesting, and closely follow the other nodes with some smaller tweaks
+    here and there. Probably the most interesting additions are the
+    <code>LogicNodes</code>, which allow more complex boolean-expression using
+    for example the <code>and</code>, <code>or</code> and
+    <code>not</code> operators. But as said before, those parts aren't really
+    that interesting to explain.
+    <br />
+    So lets finally write some real programms with it: The first program we are
+    going to look at is a still rather basic cobblestone-mining program. Lets
+    look at its code:
+  </p>
+  <figure class="halfWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/mine-cobblestone-full-actual-code.png'"
+      [title]="'cobblestone-miner full code'"
+      [style]="{ 'image-rendering': 'auto' }"
+    >
+    </app-smart-image>
+
+    <figcaption>
+      <p>
+        This is how you would enter the program in the editor. As you can see
+        you need to directly enter the nested nodes in the editor, because I've
+        decided to not write a parser for the language, the main reason for that
+        is, because I don't think it wouldn be that useful, and it would be
+        kinda clumsy to use.<br />
+        But anyway: You can still enter the program in a very efficient way and
+        you can program the bot in a much more efficient way, rather than
+        writing the state-machine by hand.
+      </p>
+    </figcaption>
+  </figure>
+
+  <p>
+    In the image bellow you can see the <code>ConditionNode</code> which checks
+    whether the pickaxe is about to break. It is declared as a distinct node,
+    because my program uses it in two different places, and so I dont have to
+    repeat the same code twice.
+  </p>
+  <figure class="halfWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/mine-cobble-helper-code.png'"
+      [title]="'cobblestone-miner helper code'"
+      [style]="{ 'image-rendering': 'auto' }"
+    >
+    </app-smart-image>
+
+    <figcaption>
+      <p>
+        As you can see from the code above, I have also used a helper-node
+        outside of the main program. This is because I use the same function in
+        multiple places, and by declaring the
+        <code>ConditionNode</code> outside I don't want to have to write the
+        same code multiple times.
+      </p>
+    </figcaption>
+  </figure>
+
+  <p>
+    The following image is the result of the
+    <code>prettyPrint()</code> function. The resulting code is way more readable
+    than the individual nodes, and it is also easier to understand. Additionaly
+    we can get an overview of the program by looking at it in its minimal form,
+    which is useful for debugging.
+  </p>
+  <figure class="halfWidthImg">
+    <app-smart-image
+      [src]="'/assets/images/mine-cobblestone-full-code.png'"
+      [title]="'cobblestone-miner full code'"
+      [style]="{ 'image-rendering': 'auto' }"
+    >
+    </app-smart-image>
+
+    <figcaption>
+      <p>
+        This is the full code of the cobblestone-miner program if you
+        <code>prettyPrint()</code> the whole program. In this form, the program
+        is way more readable, and we can also verify that the program is got
+        evaluated correctly.
+      </p>
+    </figcaption>
+  </figure>
+
+  <p>
+    Now lets look at the code in action: Here is video of the actual bot running
+    the program in a test-world: In this world, the bot has acces to a
+    cobblestone-generator and some chests with pickaxes and a chest to deposit
+    its items.
+  </p>
+
+  <div class="video">
+    <video autoplay muted controls oncanplay="this.muted=true">
+      <source src="/assets/videos/bot/cobblestone.mp4" type="video/mp4" />
+      Your browser does not support HTML video.
+    </video>
+    <p>
+      Here is video of the actual bot running the program:<br />
+      As specified in the program, the bot equips itself with a wooden-pickaxe
+      and then goes to farm cobblestone until it has mined 10 cobblestone, or
+      the pickaxe is about to break. Then it says that it has farmed enough
+      cobblestone and proceeds to go to the chests, where it tries to empty all
+      of its cobblestone.
+    </p>
+  </div>
 </div>

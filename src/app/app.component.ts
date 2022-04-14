@@ -40,5 +40,6 @@ export class AppComponent {
     this.createAndObserve(document.querySelector('#try-node')!);
     this.createAndObserve(document.querySelector('#cobblestone-program')!);
     this.createAndObserve(document.querySelector('#wood-program')!);
+    this.createAndObserve(document.querySelector('#conclusion')!);
   }
 }
