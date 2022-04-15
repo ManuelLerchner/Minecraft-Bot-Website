@@ -4,11 +4,11 @@
     Another handy node to have is the <code>IfNode</code>. Similarly to the
     <code>WhileNode</code> it receives a <code>ConditionNode</code> which, when
     evaluated, determines which branch of the <code>IfNode</code> the
-    program-flow should follow. Additionaly it receives an arbitrary
+    program-flow should follow. Additionally it receives an arbitrary
     <code>ASTNode</code> for the true-branch and another optional
     <code>ASTNode</code> for the false-branch.<br />
     Like the <code>WhileNode</code> it evaluates the condition of its
-    <code>ConditionNode</code> and then chooses the corrisponding branch which
+    <code>ConditionNode</code> and then chooses the corresponding branch which
     should be executed by the bot. <br />
     If you call the <code>compile()</code> function on a <code>IfNode</code> it
     creates the entry- and the exit states of the <code>IfNode</code> and then
@@ -43,7 +43,7 @@
       <p>
         This is the compiled version of the code above. You can clearly see the
         different parts of the <code>IFNode</code><br />
-        In the center of the immage you can see the two possible branches of the
+        In the center of the image you can see the two possible branches of the
         <code>IfNode</code>. The bot decides which one to take by evaluating the
         <code>ConditionNode</code>, and then follows the branch until it reaches
         the end of the <code>IfNode</code>, where the two branches are joined

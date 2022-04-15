@@ -1,9 +1,9 @@
 <div class="section">
   <h3 id="action">What is an Action?</h3>
   <p>
-    An Action is the foundation block of our compiler. In other words it is the
+    An Action is the foundation block of our compiler. In other words, it is the
     actual class that tells the minecraft bot what to do. As you can see from
-    the UML Diagram bellow, it extends the State behaviour interface of the
+    the UML Diagram below, it extends the State behavior interface of the
     mineflayer-api and additionally forces the <code>onStateEntered()</code> and
     <code>onStateExited()</code> methods on all its children.
   </p>
@@ -32,13 +32,13 @@
     When the task could be completed, the function tells the state-machine that
     the current task is finished, and that the next transition can be
     executed.<br />
-    If the action failed, the <code>errored</code>-Flag will be set.
+    If the action failed, the <code>error</code>-Flag will be set.
     <br />
     When the bot leaves the current state, the
     <code>onStateExited()</code> function is called, which primarily resets all
-    internal states of the corrisponding action class. <br />
+    internal states of the corresponding action class. <br />
     <br />
-    This is for example the code behind the <code>GoToAction</code> class:
+    This is, for example, the code behind the <code>GoToAction</code> class:
   </p>
 
   <textarea
@@ -75,7 +75,7 @@ export class GoToAction extends Action {
     If someone wants to extend the minecraft-bot with new features, he can just
     add new action-classes and new nodes and implement the
     <code>onStateEntered()</code> and <code>onStateExited()</code> functions,
-    thats it. Everything else will work out just fine.
+    that's it. Everything else will work out just fine.
   </p>
   <p>
     Now that we know how to create an action, we can start to explore the more

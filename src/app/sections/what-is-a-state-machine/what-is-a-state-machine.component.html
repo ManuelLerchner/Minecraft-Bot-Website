@@ -3,25 +3,25 @@
   <p>
     A state-machine is an abstract machine, that can be in exactly one state at
     a given time. <br />
-    This statement is very important because that means the follwing state can
-    be uniquley determined using the current state and the new input.<br />
+    This statement is very important because that means the following state can
+    be uniquely determined using the current state and the new input.<br />
     Such a state machine is also called a deterministic finite automaton, and
     the fact that it uniquely defines the current state and any possible future
-    state alows us to build a minecraft-bot with it.<br />
-    By defining all the possible states and transitions between those states we
+    state allows us to build a minecraft-bot with it.<br />
+    By defining all the possible states and transitions between those states, we
     can 'hardcode' our program, so that that everything, that could possible
     happen in our program has a unique state and transitions to get, and exit
     from there.<br />
     <br />
-    In contrast to a determinsitc finite automaton (DFA) exists the
-    nondeterminstic finite automaton (NFA) which is way more compicated. Such an
-    automaton can be in multiple states at a given time and use multiple
-    transitions at once or use ϵ-transitions to instantely transition to a new
+    In contrast to a deterministic finite automaton (DFA) exists the
+    nondeterministic finite automaton (NFA) which is way more complicated. Such
+    an automaton can be in multiple states at a given time and use multiple
+    transitions at once or use ϵ-transitions to instantly transition to a new
     state, even if there is no input.<br /><br />
-    Such automata aren't very useful for minecraft bots, because theire nature
-    of being in multiple states at a given time isn`t very applicable for a
-    minecraft bot, and would need a very complicated system to ultimate determit
-    what the bot should do.
+    Such automata aren't very useful for minecraft bots, because their nature of
+    being in multiple states at a given time isn't very applicable for a
+    minecraft bot, and would need a very complicated system to ultimately
+    determine what the bot should do.
   </p>
 
   <h4>Visualization of different Automata</h4>
@@ -30,14 +30,14 @@
     In a previous project I already built an automata-visualizer which visually
     represents DFAs and NFAs.<br />
     The current state(s) is/are shown with a red circle and ϵ-transitions are
-    shown whith turquoise circles moving to the corrisponding state.
+    shown with turquoise circles moving to the corresponding state.
   </p>
 
   <p>
     Here are some videos of a DFA that accepts the input (shown by landing in
     the accepting <b>Z0-State</b>) if the given binary-input-string is a
     multiple of 3.<br />
-    The autmata takes the input string, for example: "01011" and processes it
+    The automata takes the input string, for example: "01011" and processes it
     letter by letter.<br />
     It then takes the according transition, based on the value of the current
     character and goes into the new state.<br />
