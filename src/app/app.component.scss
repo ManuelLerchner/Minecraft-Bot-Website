@@ -12,6 +12,8 @@
   width: 100%;
 }
 
+
+
 .blog-section {
   display: flex;
   flex-direction: column;
@@ -21,11 +23,11 @@
 }
 
 @media (max-width: 768px) {
-  .navigation {
-    display: none;
-  }
   .content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 200px calc(100% - 210px);
+    align-self: center;
+    justify-content: space-around;
+
     padding-top: 20px;
   }
 }
