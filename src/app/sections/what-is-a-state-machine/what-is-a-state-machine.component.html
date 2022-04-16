@@ -1,8 +1,12 @@
 <div class="section">
   <h3 id="what-is-a-state-machine">What is a State-Machine?</h3>
   <p>
-    A state-machine is an abstract machine, that can be in exactly one state at
-    a given time. <br />
+    A
+    <a href="https://en.wikipedia.org/wiki/Finite-state_machine?oldformat=true"
+      >state-machine</a
+    >
+    is an abstract machine, that can be in exactly one state at a given time.
+    <br />
     This statement is very important because that means the following state can
     be uniquely determined using the current state and the new input.<br />
     Such a state machine is also called a deterministic finite automaton, and
@@ -13,11 +17,20 @@
     happen in our program has a unique state and transitions to get, and exit
     from there.<br />
     <br />
-    In contrast to a deterministic finite automaton (DFA) exists the
-    nondeterministic finite automaton (NFA) which is way more complicated. Such
-    an automaton can be in multiple states at a given time and use multiple
-    transitions at once or use ϵ-transitions to instantly transition to a new
-    state, even if there is no input.<br /><br />
+    In contrast to a
+    <a
+      href="https://en.wikipedia.org/wiki/Deterministic_finite_automaton?oldformat=true"
+    >
+      deterministic finite automaton (DFA)
+    </a>
+    exists the
+    <a
+      href="https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton?oldformat=true"
+      >nondeterministic finite automaton (NFA)</a
+    >
+    which is way more complicated. Such an automaton can be in multiple states
+    at a given time and use multiple transitions at once or use ϵ-transitions to
+    instantly transition to a new state, even if there is no input.<br /><br />
     Such automata aren't very useful for minecraft bots, because their nature of
     being in multiple states at a given time isn't very applicable for a
     minecraft bot, and would need a very complicated system to ultimately
@@ -35,15 +48,15 @@
 
   <p>
     Here are some videos of a DFA that accepts the input (shown by landing in
-    the accepting <b>Z0-State</b>) if the given binary-input-string is a
-    multiple of 3.<br />
+    the accepting Z0-State if the given binary-input-string is a multiple of
+    3.<br />
     The automata takes the input string, for example: "01011" and processes it
     letter by letter.<br />
     It then takes the according transition, based on the value of the current
     character and goes into the new state.<br />
     If no more letters are available and the current state ended up in the
-    accepting-state <b>Z0</b>, the automata accepts the input, and ensures that
-    the input number was a multiple of 3.
+    accepting-state Z0, the automata accepts the input, and ensures that the
+    input number was a multiple of 3.
   </p>
 
   <div class="videos">
