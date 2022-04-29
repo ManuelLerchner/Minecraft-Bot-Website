@@ -24,6 +24,18 @@ body {
   align-self: center;
 }
 
+@media (max-width: 768px) {
+  .hljs{
+    width: 90vw;
+    max-width: none;
+    font-size: 12px;
+  }
+  body{
+    font-size: 13px;
+  }
+}
+
+
 * {
   scroll-behavior: smooth;
   transition: all 0.3s ease-out;
