@@ -8,9 +8,8 @@
     The goal is to create a robust structure that easily allows future
     improvements and extensions, which lead me to this Code Structure:
   </p>
-  <figure>
+  <figure class="fullWidthImg">
     <app-smart-image
-      class="fullWidthImg"
       [src]="'/assets/images/uml-diagram.svg'"
       [title]="'UML-Diagram'"
       [style]="{ backgroundColor: 'rgb(95, 95, 95)' }"
@@ -28,8 +27,8 @@
     As you can see in the UML-Diagram above, every single node implements the
     <code>Node</code>-Interface which enforces a
     <code>prettyPrint()</code> function on all its children. This is to ensure,
-    that we have an easy way of analyzing the code-structure, and we can check if
-    the program we wrote actually makes sense and got parsed correctly.<br />
+    that we have an easy way of analyzing the code-structure, and we can check
+    if the program we wrote actually makes sense and got parsed correctly.<br />
     <br />
     Then we have the second interface, the so called <code>ASTNode</code> which
     stands for Abstract-Syntax-Tree-Node, which will play a huge role in
@@ -62,7 +61,7 @@
     In the following image, you can see what the AST of the example-program we
     have written above, would look like:
   </p>
-  <figure class="fullWidthImg">
+  <figure class="halfWidthImg">
     <app-smart-image
       [src]="'/assets/images/ast.svg'"
       [title]="'AST'"
