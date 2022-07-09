@@ -1,27 +1,14 @@
-# MinecraftBot
+# MinecraftBot-Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+This is the Website for my [Mineflayer-Compiler](https://github.com/ManuelLerchner/Mineflayer-Compiler) project.
 
-## Development server
+The website describes how the internal workings of the compiler work, and gives some theoretical background and example programs.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+If you want to explore the compiler further, check out my [Website](https://minecraft-bot.manuellerchner.de/).
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![image](https://user-images.githubusercontent.com/54124311/167316803-d8aafc39-84fc-4213-bfa9-8044e8b9e678.png)
 
-## Build
+![image](https://user-images.githubusercontent.com/54124311/167316947-5ce3311c-cc38-426e-9a1b-10ad56b63451.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![image](https://user-images.githubusercontent.com/54124311/167316957-d157b7b3-ba0d-492d-a013-2bc21ee84585.png)
