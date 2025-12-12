@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-smart-image',
+  standalone: false,
   templateUrl: './smart-image.component.html',
   styleUrls: ['./smart-image.component.scss'],
 })

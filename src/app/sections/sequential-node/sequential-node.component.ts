@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sequential-node',
+  standalone: false,
   templateUrl: './sequential-node.component.html',
   styleUrls: ['./sequential-node.component.scss', '../shared.scss'],
 })

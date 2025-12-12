@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cobblestone-program',
+  standalone: false,
   templateUrl: './cobblestone-program.component.html',
   styleUrls: ['./cobblestone-program.component.scss', '../shared.scss'],
 })

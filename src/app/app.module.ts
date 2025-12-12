@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { TitleComponent } from './components/title/title.component';
 import { AboutComponent } from './sections/about/about.component';
 
-import { HighlightJsModule } from 'ngx-highlight-js';
+import { HighlightJsDirective } from 'ngx-highlight-js';
 import { WhatIsAStateMachineComponent } from './sections/what-is-a-state-machine/what-is-a-state-machine.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { Compiler } from './sections/Compiler/compiler.component';
@@ -41,7 +42,7 @@ import { ConclusionComponent } from './sections/conclusion/conclusion.component'
     WoodProgramComponent,
     ConclusionComponent,
   ],
-  imports: [BrowserModule, HighlightJsModule],
+  imports: [BrowserModule, CommonModule, HighlightJsDirective],
   providers: [],
   bootstrap: [AppComponent],
 })
