@@ -1,0 +1,50 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm install --legacy-peer-deps
+
+    - name: Build application
+      run: npm run build
+
+    - name: Verify HTML output
+      run: |
+        if [ ! -f "dist/Minecraft-Bot/index.html" ]; then
+          echo "Error: index.html not found in build output"
+          exit 1
+        fi
+        echo "✓ Build successful - HTML files generated"
+        ls -lah dist/Minecraft-Bot/
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-output
+        path: dist/Minecraft-Bot/
+        retention-days: 7
